@@ -35,16 +35,12 @@ def index():
 def toggle_led(state):
     global led, led_state
 
-    try:      
-        if  state == "off":
-            led.off()
-            led_state = state
-        elif  state == "on":
-            led.on()
-            led_state = state
-       
-    except:
-        response = "There was an error"
+    if  state == "off":
+        led.off()
+        led_state = state
+    else:
+        led.on()
+        led_state = state
 
     message = led.pin
 
