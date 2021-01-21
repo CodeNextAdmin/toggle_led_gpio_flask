@@ -1,7 +1,5 @@
 from flask import Flask , render_template
-import datetime
 from gpiozero import LED
-
 
 led = LED(4)
 led.off()
@@ -18,8 +16,7 @@ def index():
     print(led.is_lit )
     if led.is_lit == True:
         led_state = "on"
-         
-         
+                
     elif led.is_lit == False:
         led_state = "off"
          
@@ -34,7 +31,6 @@ def index():
 
     return render_template('lights.html' , **templateData)
 
-
 @app.route("/<state>")
 def toggle_led(state):
     global led, led_state
@@ -46,9 +42,7 @@ def toggle_led(state):
         elif  state == "on":
             led.on()
             led_state = state
-
-        
-        
+       
     except:
         response = "There was an error"
 
@@ -65,8 +59,6 @@ def toggle_led(state):
     }
     
     return render_template('lights.html' , **templateData)
-
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
