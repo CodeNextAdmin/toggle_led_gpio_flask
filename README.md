@@ -1,5 +1,5 @@
 # Toggle LED GPIO with Flask
-A simple web server that controls an LED on a Raspberry Pi using GPIO Zero - for Team Edge T2.
+A simple [Flask](https://flask.palletsprojects.com/en/2.0.x/) web server that controls an LED on a Raspberry Pi using GPIO Zero - for Team Edge T2.
 
 The templates folder conatins two more HTML files for instructional or demo useage:
 - `main.html` which can be used to pass a date and a message to a client. The route in app.py still needs to be built for that.
